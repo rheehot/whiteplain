@@ -19,4 +19,8 @@
 </div>
 <script src="{{ "js/script.js" | relURL }}"></script>
 <script src="{{ "js/custom.js" | relURL }}"></script>
-{{ template "_internal/google_analytics.html" . }}
+
+{{ if not .Site.BuildDrafts }}
+  <!-- Google Analytics -->
+  {{ template "_internal/google_analytics.html" . }}
+{{ end }}
